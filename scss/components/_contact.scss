@@ -1,0 +1,130 @@
+.contact {
+	&-slide {
+		@include acu();
+		font-size: 128px;
+		position: relative;
+		overflow: hidden;
+		font-weight: bold;
+		.slide {
+			letter-spacing: 0;
+			display: flex;
+			width: max-content;
+			position: relative;
+			transform: translateX(-50%);
+			animation: textLoop 30s linear infinite;
+			div {
+				padding: 0 20px;
+			}
+		}
+	}
+	&-wrap {
+		display: flex;
+		margin: 0 -12px;
+	}
+	&-content {
+		padding-top: 6.6vw;
+	}
+	&-title {
+		margin-bottom: 60px;
+		font-size: 26px;
+		@include acu;
+		.line {
+			overflow: hidden;
+			div {
+				max-width: 100%;
+				width: max-content;
+				position: relative;
+				transform: translateY(100%);
+				transition: 0.3s linear;
+			}
+			&:nth-child(2) {
+				div {
+					transition-delay: 0.1s;
+				}
+			}
+			&:nth-child(3) {
+				div {
+					transition-delay: 0.2s;
+				}
+			}
+			&:nth-child(4) {
+				div {
+					transition-delay: 0.3s;
+				}
+			}
+			&:nth-child(5) {
+				div {
+					transition-delay: 0.4s;
+				}
+			}
+		}
+	}
+	&-info {
+		margin-bottom: 60px;
+		font-size: 16px;
+		transform: translateX(30px);
+		opacity: 0;
+		transition: 0.5s ease-out;
+		.txt {
+			display: block;
+			width: max-content;
+			margin-bottom: 16px;
+		}
+	}
+	&-subtitle {
+		font-weight: bold;
+		margin-bottom: 16px;
+	}
+
+	&-right {
+		margin-top: -5vw;
+	}
+	&-img {
+		display: block;
+		border-radius: 32px;
+		overflow: hidden;
+		transform: scale(0.8);
+		transition: 0.5s ease-in-out;
+		background-color: rgba(255, 255, 255, 0.2);
+		img {
+			width: 100%;
+			opacity: 0;
+			transition: 0.5s ease-in-out;
+		}
+	}
+}
+@keyframes textLoop {
+	0% {
+		transform: translateX(-50%);
+	}
+	100% {
+		transform: translateX(0);
+	}
+}
+.welcome {
+	.contact {
+		&-title {
+			.line {
+				div {
+					transform: translateY(0);
+				}
+			}
+		}
+		&-img {
+			transform: scale(1);
+			img {
+				opacity: 1;
+			}
+		}
+		&-info {
+			opacity: 1;
+			transform: translateX(0px);
+			&:nth-child(2) {
+				transition-delay: 0.3s;
+			}
+			&:nth-child(3) {
+				transition-delay: 0.5s;
+			}
+		}
+	}
+}

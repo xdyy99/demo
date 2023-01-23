@@ -1,0 +1,117 @@
+.footer {
+	&-wrapper {
+		display: flex;
+		justify-content: space-between;
+	}
+	&-menu {
+		ul {
+			li {
+				margin-bottom: 24px;
+				&:last-child {
+					margin-bottom: 0;
+				}
+			}
+			a {
+				@include acu();
+				width: max-content;
+				max-width: 100%;
+				display: block;
+				position: relative;
+				overflow: hidden;
+				border-bottom: 2px solid transparent;
+				font-size: 36px;
+				div {
+					transition: 0.2s ease;
+					&:first-child {
+						transform-origin: bottom center;
+						position: absolute;
+						width: 100%;
+						top: 0;
+						left: 0;
+						transform: translateY(-100%) rotateY(10deg);
+					}
+				}
+
+				&:hover {
+					border-color: #fff;
+					div {
+						&:first-child {
+							transform: translateY(0) rotateY(0deg);
+						}
+						&:last-child {
+							transform: translateY(100%);
+						}
+					}
+				}
+				&.current {
+					border-color: #fff;
+				}
+				.white-bg &:hover {
+					border-color: #000;
+				}
+				.white-bg &.current {
+					border-color: #000;
+				}
+			}
+		}
+	}
+	&-right {
+		width: 400px;
+		display: flex;
+		flex-direction: column;
+	}
+	&-url {
+		display: block;
+		margin-bottom: 16px;
+		font-size: 16px;
+	}
+	&-social {
+		margin-top: auto;
+
+		ul {
+			display: flex;
+			align-items: center;
+			li {
+				margin-right: 16px;
+				&:last-child {
+					margin-right: 0;
+				}
+			}
+			a {
+				width: max-content;
+				max-width: 100%;
+				display: block;
+				position: relative;
+				overflow: hidden;
+				border-bottom: 2px solid transparent;
+				font-size: 26px;
+				div {
+					transition: 0.2s ease;
+					&:first-child {
+						transform-origin: bottom center;
+						position: absolute;
+						width: 100%;
+						top: 0;
+						left: 0;
+						transform: translateY(-100%) rotateY(10deg);
+					}
+				}
+
+				&:hover {
+					border-color: #fff;
+					div {
+						&:first-child {
+							transform: translateY(0) rotateY(0deg);
+						}
+						&:last-child {
+							transform: translateY(100%);
+						}
+					}
+				}
+				.white-bg &:hover {
+					border-color: #000;
+				}
+			}
+		}
+	}
+}

@@ -1,0 +1,166 @@
+.about {
+	&-wrap {
+		display: flex;
+		margin: 0 -12px 6.6vw;
+		justify-content: center;
+		flex-wrap: wrap;
+	}
+	&-title {
+		font-size: 45px;
+		margin-bottom: 32px;
+		@include acu;
+		.line {
+			overflow: hidden;
+			div {
+				max-width: 100%;
+				width: max-content;
+				position: relative;
+				transform: translateY(100%);
+				transition: 0.3s linear;
+			}
+			&:nth-child(2) {
+				div {
+					transition-delay: 0.1s;
+				}
+			}
+			&:nth-child(3) {
+				div {
+					transition-delay: 0.2s;
+				}
+			}
+			&:nth-child(4) {
+				div {
+					transition-delay: 0.3s;
+				}
+			}
+			&:nth-child(5) {
+				div {
+					transition-delay: 0.4s;
+				}
+			}
+		}
+	}
+	&-txt {
+		font-size: 16px;
+		margin-bottom: 16px;
+		line-height: 2;
+		transform: translateY(20px);
+		opacity: 0;
+		transition: 0.3s linear;
+	}
+	&-slide {
+		@include acu();
+		font-size: 80px;
+		position: relative;
+		overflow: hidden;
+		font-weight: bold;
+		padding: 70px 0;
+		border-bottom: 2px solid #fff;
+		transition: 0.3s ease-in-out;
+		.slide {
+			letter-spacing: 0;
+			display: flex;
+			width: max-content;
+			position: relative;
+			transform: translateX(-50%);
+			animation: textLoop 50s linear infinite;
+			div {
+				padding: 0 20px;
+			}
+		}
+	}
+	&-hover {
+		position: relative;
+		&:nth-child(even) {
+			.slide {
+				transform: translateX(0%);
+				animation: reverseTextLoop 50s linear infinite;
+			}
+		}
+		&:nth-child(1) {
+			.about-img {
+				left: 65%;
+			}
+		}
+		&:nth-child(2) {
+			.about-img {
+				left: 20%;
+			}
+		}
+		&:nth-child(3) {
+			.about-img {
+				left: 80%;
+			}
+		}
+		&:nth-child(4) {
+			.about-img {
+				left: 45%;
+			}
+		}
+	}
+	&-img {
+		width: 15%;
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+		aspect-ratio: 1;
+		border-radius: 32px;
+		overflow: hidden;
+		z-index: 2;
+		transition: width 0.5s ease-in-out;
+		img {
+			width: 100%;
+			height: 100%;
+			object-fit: cover;
+			object-position: center center;
+		}
+	}
+	&-team {
+		&:hover {
+			.about {
+				&-img {
+					width: 0;
+				}
+				&-slide {
+					color: rgba(255, 255, 255, 0.3);
+				}
+				&-hover {
+					&:hover {
+						.about {
+							&-img {
+								width: 20%;
+							}
+							&-slide {
+								color: rgba(255, 255, 255, 1);
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}
+.welcome {
+	.about {
+		&-title {
+			.line {
+				div {
+					transform: translateY(0);
+				}
+			}
+		}
+		&-txt {
+			transform: translateY(0);
+			opacity: 1;
+		}
+	}
+}
+@keyframes reverseTextLoop {
+	0% {
+		transform: translateX(0%);
+	}
+	100% {
+		transform: translateX(-50%);
+	}
+}

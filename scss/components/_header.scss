@@ -1,0 +1,86 @@
+.header {
+	position: fixed;
+	top: 0px;
+	left: 0;
+	right: 0;
+	width: 100%;
+	z-index: 10;
+	transition: 0.2s linear;
+	&.scroll {
+		background-color: rgba(0, 0, 0, 0.4);
+		backdrop-filter: blur(20px);
+
+		.white-bg & {
+			background-color: rgba(255, 255, 255, 0.4);
+		}
+
+		.header {
+			&-wrapper {
+				padding: 1vw 0;
+			}
+		}
+	}
+	&-wrapper {
+		display: flex;
+		align-items: center;
+		padding: 2vw 0;
+		transition: 0.2s linear;
+	}
+	&-logo {
+		margin-right: auto;
+		font-size: 32px;
+		@include acu;
+	}
+	&-top {
+		font-size: 16px;
+		ul {
+			display: flex;
+			align-items: center;
+			margin: 0 -1.2vw;
+			li {
+				margin: 0 1.2vw;
+			}
+			a {
+				display: block;
+				position: relative;
+				overflow: hidden;
+				border-bottom: 2px solid transparent;
+				div {
+					transition: 0.2s ease;
+					&:first-child {
+						transform-origin: bottom center;
+						position: absolute;
+						width: 100%;
+						top: 0;
+						left: 0;
+						transform: translateY(-100%) rotateY(10deg);
+					}
+				}
+
+				&:hover {
+					border-color: #fff;
+					div {
+						&:first-child {
+							transform: translateY(0) rotateY(0deg);
+						}
+						&:last-child {
+							transform: translateY(100%);
+						}
+					}
+				}
+				&.current {
+					border-color: #fff;
+				}
+				.white-bg &:hover {
+					border-color: #000;
+				}
+				.white-bg &.current {
+					border-color: #000;
+				}
+			}
+		}
+	}
+	&-scroll {
+		display: none;
+	}
+}

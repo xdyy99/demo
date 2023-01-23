@@ -1,0 +1,88 @@
+.banner {
+	&-title {
+		font-size: 64px;
+		margin-bottom: 6.6vw;
+		@include acu;
+		.line {
+			overflow: hidden;
+			::after {
+				content: '';
+				display: block;
+				width: 0;
+				height: 3px;
+				background-color: #fff;
+				position: absolute;
+				bottom: 5px;
+				left: 0;
+				transition: 0.2s linear 0.4s;
+			}
+			div {
+				max-width: 100%;
+				width: max-content;
+				position: relative;
+				transform: translateY(100%);
+				transition: 0.3s linear;
+			}
+			&:nth-child(2) {
+				div {
+					transition-delay: 0.1s;
+				}
+			}
+			&:nth-child(3) {
+				div {
+					transition-delay: 0.2s;
+				}
+			}
+			&:nth-child(4) {
+				div {
+					transition-delay: 0.3s;
+				}
+			}
+			&:nth-child(5) {
+				div {
+					transition-delay: 0.4s;
+				}
+			}
+		}
+	}
+	&-img {
+		transform-origin: bottom center;
+		border-radius: 32px;
+		overflow: hidden;
+		transform: scale(0.8);
+		transition: 0.5s ease-in-out 0.5s;
+		background-color: rgba(255, 255, 255, 0.2);
+		img {
+			width: 100%;
+			opacity: 0;
+			transition: 0.5s ease-in-out 0.5s;
+		}
+	}
+	&-txt {
+		max-width: 60%;
+		padding: 3.3vw;
+	}
+	&-btn {
+		margin-left: 3.3vw;
+	}
+}
+.welcome {
+	.banner {
+		&-title {
+			.line {
+				::after {
+					width: 100%;
+				}
+				div {
+					transform: translateY(0);
+				}
+			}
+		}
+		&-img {
+			transform: scale(1);
+			img {
+				opacity: 1;
+			}
+		}
+	}
+}
